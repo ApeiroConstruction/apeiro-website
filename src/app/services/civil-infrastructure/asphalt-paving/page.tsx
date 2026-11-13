@@ -70,7 +70,7 @@ const PROJECT: ProjectSummary = {
 export default function AsphaltPavingPage() {
   return (
     <>
-      <PageHero
+      <PageHero wide
         crumbs={[
           { label: "Home", href: ROUTES.home },
           { label: "Services", href: ROUTES.services },

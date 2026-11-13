@@ -51,7 +51,7 @@ const REGIONS = [
 export default function ServiceAreasPage() {
   return (
     <>
-      <PageHero
+      <PageHero wide
         crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Service Areas" }]}
         title="Service Areas"
         intro="From our base in London, we deliver commercial, institutional and civil projects across Southwestern Ontario and beyond."

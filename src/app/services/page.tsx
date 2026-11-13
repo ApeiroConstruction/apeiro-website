@@ -107,7 +107,7 @@ function grid(min: number) {
 export default function ServicesPage() {
   return (
     <>
-      <PageHero
+      <PageHero wide
         crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Services" }]}
         title="Our Construction Services"
         intro="From pre-construction through completion, Apeiro delivers commercial, institutional and civil projects between $800K and $4M+ across London, Barrie, Cambridge and surrounding Ontario regions."

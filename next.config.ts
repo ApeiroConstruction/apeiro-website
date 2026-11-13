@@ -24,6 +24,8 @@ const isProduction = process.env.VERCEL_ENV === "production";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Inline the (small) stylesheet into each page so it doesn't block the first paint.
+  experimental: { inlineCss: true },
   images: {
     formats: ["image/avif", "image/webp"],
   },

@@ -1,4 +1,4 @@
-import { CtaBand, PageHero, PhotosUnderConstruction } from "@/components/Blocks";
+import { CtaBand, PageHero, PhotosUnderConstruction, ProjectVideo } from "@/components/Blocks";
 import { Check } from "@/components/Icons";
 import { pageMeta } from "@/lib/seo";
 import { MEDIA, ROUTES } from "@/lib/site";
@@ -79,11 +79,9 @@ function ProjectSection({ p, index }: { p: Project; index: number }) {
     <section id={p.id} className={`${index % 2 === 0 ? "bg-white" : "bg-light"} border-top`}>
       <div className="container section" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px 64px" }}>
         {p.video ? (
-          <div className="media media-16-9" style={{ ...media, background: "var(--charcoal)" }}>
-            <video src={p.video.src} poster={p.video.poster} muted loop playsInline controls preload="none" aria-label={p.video.label} />
-          </div>
+          <ProjectVideo src={p.video.src} poster={p.video.poster} label={p.video.label} priority={index === 0} style={media} />
         ) : (
-          <PhotosUnderConstruction ratio="16/9" style={{ ...media, order: 2 }} />
+          <PhotosUnderConstruction large ratio="16/9" style={{ ...media, order: 2 }} />
         )}
         <div className="stack" style={{ flex: "1 1 440px", minWidth: 0, gap: 16 }}>
           <span className="tag" style={{ fontSize: 14 }}>

@@ -73,7 +73,7 @@ const PROJECTS: ProjectSummary[] = [
 export default function ConcretePage() {
   return (
     <>
-      <PageHero
+      <PageHero wide
         crumbs={[
           { label: "Home", href: ROUTES.home },
           { label: "Services", href: ROUTES.services },

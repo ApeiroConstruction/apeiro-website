@@ -65,7 +65,7 @@ const STEPS = [
 export default function WaterSewerPage() {
   return (
     <>
-      <PageHero
+      <PageHero wide
         crumbs={[
           { label: "Home", href: ROUTES.home },
           { label: "Services", href: ROUTES.services },

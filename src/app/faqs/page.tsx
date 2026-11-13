@@ -69,7 +69,7 @@ export default function FaqsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }} />
 
-      <PageHero
+      <PageHero pad="compact"
         crumbs={[{ label: "Home", href: ROUTES.home }, { label: "FAQs" }]}
         title="Frequently Asked Questions"
         intro="Answers to common questions about working with Apeiro Construction. Can’t find what you need? Call us or request a quote."

@@ -82,7 +82,7 @@ const SECTORS = [
 export default function AboutPage() {
   return (
     <>
-      <PageHero
+      <PageHero pad="tall"
         title="About Apeiro Construction"
         intro="A London, Ontario contractor delivering civil and ICI infrastructure for institutional, municipal, commercial and industrial clients."
       >

@@ -1,5 +1,5 @@
 // Reusable page sections that repeat across the prototype pages.
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BUSINESS, ROUTES, type ProjectSummary } from "@/lib/site";
@@ -29,6 +29,8 @@ export function PageHero({
   intro,
   children,
   id = "top",
+  pad = "default",
+  wide,
 }: {
   crumbs?: Crumb[];
   title: ReactNode;
@@ -36,12 +38,18 @@ export function PageHero({
   /** Buttons or extra content under the intro. Defaults to a "Request a Quote" button. Pass null for none. */
   children?: ReactNode | null;
   id?: string;
+  /** Vertical padding from the prototype: default 72/80, compact 64/72, tall 88/80. */
+  pad?: "default" | "compact" | "tall";
+  /** Heading may run to 960px wide instead of 900px. */
+  wide?: boolean;
 }) {
   return (
     <section id={id} className="grid-bg dark">
-      <div className="container page-hero-inner">
+      <div className={`container page-hero-inner${pad === "default" ? "" : ` hero-${pad}`}`}>
         {crumbs && <Breadcrumb items={crumbs} />}
-        <h1 className="h1">{title}</h1>
+        <h1 className="h1" style={wide ? { maxWidth: 960 } : undefined}>
+          {title}
+        </h1>
         {intro && <p className="lead">{intro}</p>}
         {children === undefined ? (
           <div style={{ paddingTop: 8 }}>
@@ -73,10 +81,10 @@ export function CallButton({ variant = "outline-white" }: { variant?: "outline-w
 }
 
 /* ---------------- Red closing call-to-action band ---------------- */
-export function CtaBand({ title, text, children }: { title: ReactNode; text: ReactNode; children?: ReactNode }) {
+export function CtaBand({ title, text, children, tall }: { title: ReactNode; text: ReactNode; children?: ReactNode; tall?: boolean }) {
   return (
     <section id="cta" className="bg-red on-red">
-      <div className="container cta-inner">
+      <div className="container cta-inner" style={tall ? { paddingTop: 88, paddingBottom: 88 } : undefined}>
         <div className="cta-text">
           <h2 className="h2">{title}</h2>
           <p>{text}</p>
@@ -188,11 +196,36 @@ export function MediaImage({
   );
 }
 
-/** "Photos Under Construction" panel for projects with no media yet. */
-export function PhotosUnderConstruction({ ratio = "4/3", style }: { ratio?: "4/3" | "16/10" | "16/9"; style?: React.CSSProperties }) {
+/**
+ * Project video: muted, looping, playsInline, native controls, with a compressed poster image.
+ * `priority` preloads the poster (use it for the first video on a page).
+ */
+export function ProjectVideo({ src, poster, label, priority, style }: { src: string; poster: string; label: string; priority?: boolean; style?: React.CSSProperties }) {
+  // width 540 → the 2x candidate (used as src) is a 1080px-wide compressed image.
+  const { props } = getImageProps({ src: poster, alt: "", width: 540, height: 304, quality: 70 });
   return (
-    <div className="uc-panel" style={{ aspectRatio: ratio.replace("/", " / "), ...style }}>
-      <HardHat />
+    <div className="media media-16-9" style={{ background: "var(--charcoal)", ...style }}>
+      {/* Same poster as a normal image underneath, so it paints immediately. */}
+      <Image src={poster} alt="" aria-hidden="true" fill priority={priority} sizes="(max-width: 1000px) 100vw, 600px" quality={70} />
+      <video src={src} poster={props.src} muted loop playsInline controls preload="none" aria-label={label} />
+    </div>
+  );
+}
+
+/** "Photos Under Construction" panel for projects with no media yet. */
+export function PhotosUnderConstruction({
+  ratio = "4/3",
+  style,
+  large,
+}: {
+  ratio?: "4/3" | "16/10" | "16/9";
+  style?: React.CSSProperties;
+  /** Bigger icon and title, as on the Projects page. */
+  large?: boolean;
+}) {
+  return (
+    <div className={`uc-panel${large ? " uc-large" : ""}`} style={{ aspectRatio: ratio.replace("/", " / "), ...style }}>
+      <HardHat size={large ? 44 : 34} />
       <span className="uc-title">Photos Under Construction</span>
       <span className="uc-sub">Project images coming soon</span>
     </div>

@@ -49,7 +49,7 @@ const COLLECT: [string, string, string][] = [
 export default function PrivacyPage() {
   return (
     <>
-      <PageHero crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Privacy Policy" }]} title="Privacy Policy">
+      <PageHero pad="compact" crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Privacy Policy" }]} title="Privacy Policy">
         <p style={{ margin: 0, fontSize: 17, color: "var(--on-dark-strong)" }}>
           {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
           Last updated: <Pending>[date of publication]</Pending>

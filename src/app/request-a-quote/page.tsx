@@ -19,7 +19,7 @@ const NEXT_STEPS = [
 export default function QuotePage() {
   return (
     <>
-      <PageHero crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Request a Quote" }]} title="Request a Quote" intro="Four quick steps. Tell us about your project and our team will follow up.">
+      <PageHero pad="compact" crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Request a Quote" }]} title="Request a Quote" intro="Four quick steps. Tell us about your project and our team will follow up.">
         {null}
       </PageHero>
 

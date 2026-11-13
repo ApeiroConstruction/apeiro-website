@@ -41,7 +41,7 @@ function Item({ icon, title, children }: { icon: ReactNode; title: string; child
 export default function ContactPage() {
   return (
     <>
-      <PageHero
+      <PageHero pad="compact"
         crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Contact" }]}
         title="Contact Us"
         intro="Talk to our team about your next commercial, institutional or civil project."

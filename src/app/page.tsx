@@ -154,6 +154,7 @@ export default function HomePage() {
       </section>
 
       <CtaBand
+        tall
         title="Planning Your 2026/2027 Pipeline?"
         text="We’re accepting invited bids and prequalification packages for projects between $800K and $4M+."
       />

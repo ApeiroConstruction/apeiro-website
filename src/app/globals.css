@@ -530,6 +530,13 @@ main:focus {
   flex-direction: column;
   gap: 18px;
 }
+.page-hero-inner.hero-compact {
+  padding-top: 64px;
+  padding-bottom: 72px;
+}
+.page-hero-inner.hero-tall {
+  padding-top: 88px;
+}
 .breadcrumb {
   font-size: 14px;
   color: var(--on-dark);
@@ -788,6 +795,9 @@ main:focus {
   text-transform: uppercase;
   color: #fff;
   line-height: 1.05;
+}
+.uc-large .uc-title {
+  font-size: 26px;
 }
 .uc-sub {
   font-size: 14px;

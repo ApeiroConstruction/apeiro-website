@@ -18,6 +18,7 @@
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
     "axe-core": "^4.10.3",
+    "lighthouse": "^12.8.2",
     "typescript": "5.9.2"
   }
 }
