@@ -1,0 +1,22 @@
+-- Run once in Supabase: Dashboard > SQL Editor > New query > paste > Run.
+-- Creates the table for Request a Quote submissions and locks it down.
+
+create table if not exists public.quote_requests (
+  id           uuid primary key default gen_random_uuid(),
+  created_at   timestamptz not null default now(),
+  project_type text not null,
+  budget       text not null,
+  timeline     text not null,
+  name         text not null,
+  company      text not null,
+  email        text not null,
+  phone        text not null,
+  page_url     text
+);
+
+-- Row-level security ON with no policies: the public (anon/authenticated keys) can't
+-- read, insert, update or delete. Only the website's server, using the secret
+-- service role key, can insert. Staff view submissions in the Supabase dashboard.
+alter table public.quote_requests enable row level security;
+
+revoke all on public.quote_requests from anon, authenticated;
