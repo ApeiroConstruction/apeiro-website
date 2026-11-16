@@ -1,0 +1,24 @@
+# Netlify build settings. Netlify detects Next.js and adds its adapter automatically,
+# so redirects, image optimization and the quote form's server route all work as-is.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Only the live production site may be indexed by Google.
+# PRE-LAUNCH: the main site is built as "prelaunch" (noindex), so the temporary
+# .netlify.app address stays out of Google. ON LAUNCH DAY, after the domain is
+# connected, change "prelaunch" to "production" below and redeploy.
+# Deploy previews and branch deploys are always "preview" (noindex).
+[context.production.environment]
+  NEXT_PUBLIC_SITE_ENV = "prelaunch"
+
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_SITE_ENV = "preview"
+
+[context.branch-deploy.environment]
+  NEXT_PUBLIC_SITE_ENV = "preview"

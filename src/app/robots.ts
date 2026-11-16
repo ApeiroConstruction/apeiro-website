@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { IS_PRODUCTION } from "@/lib/env";
 import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  if (process.env.VERCEL_ENV !== "production") {
+  if (!IS_PRODUCTION) {
     return { rules: [{ userAgent: "*", disallow: "/" }] };
   }
   return {

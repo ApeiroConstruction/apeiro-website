@@ -141,7 +141,7 @@ export default function PrivacyPage() {
           <p style={pStyle}>
             Our website, quote form and client database are hosted by third-party service providers{" "}
             {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
-            <Pending>[Vercel and Supabase – confirm]</Pending>, whose servers may be located outside Canada, including in the United States{" "}
+            <Pending>[Netlify and Supabase – confirm]</Pending>, whose servers may be located outside Canada, including in the United States{" "}
             {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
             <Pending>[confirm region]</Pending>.
           </p>

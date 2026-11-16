@@ -4,6 +4,7 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { businessJsonLd } from "@/lib/seo";
+import { IS_PRODUCTION } from "@/lib/env";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -11,7 +12,7 @@ import "./globals.css";
 const barlow = Barlow_Condensed({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-barlow", display: "swap" });
 const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex", display: "swap" });
 
-const isProduction = process.env.VERCEL_ENV === "production";
+const isProduction = IS_PRODUCTION;
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {

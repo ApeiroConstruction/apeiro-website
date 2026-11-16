@@ -1,6 +1,7 @@
 // Receives Request a Quote submissions, saves them to Supabase and emails a notification.
 // Runs on the server only; keys come from environment variables (see .env.example).
 import { NextResponse } from "next/server";
+import { IS_PRODUCTION } from "@/lib/env";
 import { validateQuote, type QuoteInput } from "@/lib/quote";
 
 export const runtime = "nodejs";
@@ -64,7 +65,7 @@ export async function POST(req: Request) {
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!supabaseUrl || !supabaseKey) {
-    if (process.env.VERCEL_ENV === "production") {
+    if (IS_PRODUCTION) {
       console.error("[quote] Supabase is not configured.");
       return NextResponse.json({ ok: false, error: "Service unavailable." }, { status: 503 });
     }

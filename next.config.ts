@@ -20,7 +20,11 @@ function loadRedirects() {
   return out;
 }
 
-const isProduction = process.env.VERCEL_ENV === "production";
+// Same rule as src/lib/env.ts (NEXT_PUBLIC_SITE_ENV is set per deploy type in netlify.toml).
+const siteEnv = process.env.NEXT_PUBLIC_SITE_ENV;
+const isProduction = siteEnv
+  ? siteEnv === "production"
+  : process.env.CONTEXT === "production" || process.env.VERCEL_ENV === "production";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,

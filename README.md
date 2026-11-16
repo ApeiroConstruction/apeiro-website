@@ -22,9 +22,11 @@ npm start        # then open http://localhost:3000
 - Settings/keys: copy `.env.example` → `.env.local` (never commit real keys)
 
 ## Before launch (needs accounts / decisions)
-1. GitHub repo + Vercel project (connect repo; add the env vars from `.env.example`).
+1. GitHub repo + Netlify site (connect repo; build settings come from `netlify.toml`; add the env vars from `.env.example`).
 2. Supabase project → run `supabase/quote_requests.sql` → add `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`.
 3. Resend account → verify the sending domain → add `RESEND_API_KEY`. (Adds DNS records — do NOT touch MX records.)
 4. GA4 property → `NEXT_PUBLIC_GA_ID`.
 5. Open items from the brief: blog, Privacy Policy legal review (highlighted items), missing project photos, map embeds on Contact / Service Areas.
-6. Test on a Vercel preview (automatically `noindex`), get approval, then connect the domain.
+6. Test on the Netlify address, get approval, then connect the domain. Indexing is controlled by `NEXT_PUBLIC_SITE_ENV` in `netlify.toml`: the main site ships as `prelaunch` (noindex) and must be changed to `production` on launch day (LAUNCH-CHECKLIST.md Part 6). Deploy previews and local builds are always `noindex`.
+
+Full step-by-step: [LAUNCH-CHECKLIST.md](LAUNCH-CHECKLIST.md).
