@@ -79,14 +79,24 @@ export async function POST(req: Request) {
     method: "POST",
     headers: {
       apikey: supabaseKey,
-      Authorization: `Bearer ${supabaseKey}`,
+      // Legacy service_role keys are JWTs ("eyJ…") and go in Authorization too.
+      // New-style secret keys ("sb_secret_…") must be sent in the apikey header only.
+      ...(supabaseKey.startsWith("eyJ") ? { Authorization: `Bearer ${supabaseKey}` } : {}),
       "Content-Type": "application/json",
       Prefer: "return=minimal",
     },
     body: JSON.stringify(input),
   });
   if (!save.ok) {
-    console.error("[quote] Supabase insert failed", save.status, await save.text().catch(() => ""));
+    // Key type only (never the key itself), to diagnose a wrong key without exposing it.
+    const keyType = supabaseKey.startsWith("sb_secret_")
+      ? "secret (new)"
+      : supabaseKey.startsWith("sb_publishable_")
+        ? "PUBLISHABLE — wrong key, use the secret one"
+        : supabaseKey.startsWith("eyJ")
+          ? "legacy JWT (anon or service_role)"
+          : "unrecognised";
+    console.error("[quote] Supabase insert failed", save.status, `key type: ${keyType}`, await save.text().catch(() => ""));
     return NextResponse.json({ ok: false, error: "Could not save request." }, { status: 502 });
   }
 
