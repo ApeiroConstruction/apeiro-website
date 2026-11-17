@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, IBM_Plex_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,9 +8,28 @@ import { IS_PRODUCTION } from "@/lib/env";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-// next/font downloads these at build time and serves them from this site (self-hosted).
-const barlow = Barlow_Condensed({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-barlow", display: "swap" });
-const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex", display: "swap" });
+// Self-hosted fonts (files in src/fonts, SIL Open Font License). Kept in the project so
+// builds never depend on Google Fonts being reachable.
+const barlow = localFont({
+  src: [
+    { path: "../fonts/barlow-condensed-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/barlow-condensed-latin-700-normal.woff2", weight: "700", style: "normal" },
+    { path: "../fonts/barlow-condensed-latin-800-normal.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-barlow",
+  display: "swap",
+  fallback: ["Arial Narrow", "sans-serif"],
+});
+const plex = localFont({
+  src: [
+    { path: "../fonts/ibm-plex-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/ibm-plex-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/ibm-plex-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+  ],
+  variable: "--font-plex",
+  display: "swap",
+  fallback: ["system-ui", "Segoe UI", "Arial", "sans-serif"],
+});
 
 const isProduction = IS_PRODUCTION;
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
