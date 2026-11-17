@@ -69,7 +69,8 @@ A step-by-step list for getting the new website online. Do the steps in order. N
 1. Netlify → **Domain management → Add a domain** → `www.apeiroconstruction.com`, set it as the **primary domain**, and add `apeiroconstruction.com` too (Netlify redirects it to www).
 2. Choose **"use external DNS"** (keep DNS at OneLocal). **Don't** move the whole domain's DNS to Netlify: that's riskier for email. Netlify then shows the records to add: usually a **CNAME** for `www` pointing to `apeiro-website.netlify.app`, and an **A record** (or ALIAS) for the bare domain. Change only those at OneLocal. **Leave MX, and any TXT records used for email, untouched.**
 3. Wait until Netlify shows the domain as verified and **HTTPS certificate issued**. Then open the site and send a test email to info@ to confirm email still works.
-4. **Flip the launch switch:** in `netlify.toml`, change `NEXT_PUBLIC_SITE_ENV = "prelaunch"` to `"production"` (Claude can do this), then let Netlify redeploy. Check that `https://www.apeiroconstruction.com/robots.txt` shows `Allow: /`. **Until this is done, Google won't index the new site.**
+4. **Turn off the private-site lock:** Netlify → **Project configuration → Access & security → Visitor access** → set to **public** (no protection). Otherwise visitors see "This site is private".
+5. **Flip the launch switch:** in `netlify.toml`, change `NEXT_PUBLIC_SITE_ENV = "prelaunch"` to `"production"` (Claude can do this), then let Netlify redeploy. Check that `https://www.apeiroconstruction.com/robots.txt` shows `Allow: /`. **Until this is done, Google won't index the new site.**
 
 ## Part 7: After launch
 - [ ] Google Search Console: add the domain → **Sitemaps** → submit `https://www.apeiroconstruction.com/sitemap.xml`.
