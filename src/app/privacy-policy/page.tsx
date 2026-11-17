@@ -126,7 +126,7 @@ export default function PrivacyPage() {
           <p style={pStyle}>We share personal information only when needed, and only the minimum required:</p>
           <ul style={ulStyle}>
             <li>
-              <strong>Service providers</strong> that run our website, quote form, client database, email and analytics. They may use the information only
+              <strong>Service providers</strong> that run our website, quote form, client database, email notifications, maps and analytics (listed below). They may use the information only
               to provide their service to us and must protect it.
             </li>
             <li>
@@ -138,13 +138,25 @@ export default function PrivacyPage() {
           </ul>
 
           <h2 style={h2Style()}>Where Your Information Is Stored</h2>
-          <p style={pStyle}>
-            Our website, quote form and client database are hosted by third-party service providers{" "}
-            {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
-            <Pending>[Netlify and Supabase – confirm]</Pending>, whose servers may be located outside Canada, including in the United States{" "}
-            {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
-            <Pending>[confirm region]</Pending>.
-          </p>
+          <p style={pStyle}>Our website and the information you send through it are handled by these third-party service providers:</p>
+          <ul style={ulStyle}>
+            <li>
+              <strong>Netlify</strong> (website hosting), a U.S. company that delivers our website from servers around the world, including in the
+              United States.
+            </li>
+            <li>
+              <strong>Supabase</strong> (quote request database), which stores the quote requests submitted through our website on servers located in{" "}
+              {/* TODO(legal): confirm the Supabase project region before launch — CLAUDE.md open item 2 */}
+              <Pending>[confirm region, e.g. Canada (Central)]</Pending>.
+            </li>
+            <li>
+              <strong>Resend</strong> (email notifications), a U.S. company that sends our team an email containing the details of each new quote
+              request.
+            </li>
+            <li>
+              <strong>Google</strong> (Google Analytics and Google Maps), a U.S. company. See Cookies and Analytics below.
+            </li>
+          </ul>
           <p style={pStyle}>
             Information stored outside Canada is protected by our agreements with these providers, but may be subject to the laws of that country,
             including lawful access by its courts and authorities.
@@ -154,11 +166,17 @@ export default function PrivacyPage() {
           <p style={pStyle}>Cookies are small files a website stores in your browser. Our site uses:</p>
           <ul style={ulStyle}>
             <li>
-              <strong>Essential cookies</strong> that make the site work, such as remembering where you are in the quote form.
+              <strong>Essential cookies</strong> that make the site work, such as remembering where you are in the quote form.{" "}
+              {/* TODO(legal): the site currently sets no essential cookies of its own (the quote form keeps its steps in the page, not in a cookie). */}
+              <Pending>[Review: the website itself currently sets no cookies for the quote form.]</Pending>
             </li>
             <li>
               <strong>Analytics cookies</strong> from Google Analytics, which tell us how many people visit, which pages they view and how they found us.
               This information is aggregated and does not identify you by name. You can opt out with Google’s Analytics Opt-out Browser Add-on.
+            </li>
+            <li>
+              <strong>Google Maps</strong> on our Service Areas and Contact pages. When a map loads, Google may set cookies and receive information such as
+              your IP address, under Google’s own privacy policy.
             </li>
           </ul>
           <p style={pStyle}>

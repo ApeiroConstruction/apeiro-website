@@ -16,6 +16,8 @@ export const BUSINESS = {
   phoneE164: "+16477837532",
   email: "info@apeiroconstruction.com",
   hoursDisplay: "Mon–Sat, 9:00 am – 5:00 pm",
+  /** Google Maps search that finds our Google Business listing (labelled pin). */
+  mapsQuery: "Apeiro Construction Inc, 3392 Wonderland Road South, London, ON N6L 1J9",
 };
 
 export const ROUTES = {

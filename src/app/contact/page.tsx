@@ -12,7 +12,7 @@ export const metadata = pageMeta({
   path: ROUTES.contact,
 });
 
-const MAP_QUERY = encodeURIComponent(`${BUSINESS.street}, ${BUSINESS.city}, ${BUSINESS.region} ${BUSINESS.postal}`);
+const MAP_QUERY = encodeURIComponent(BUSINESS.mapsQuery);
 
 const headStyle = {
   margin: 0,

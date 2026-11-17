@@ -1,6 +1,6 @@
 import { CtaBand, PageHero } from "@/components/Blocks";
 import { pageMeta } from "@/lib/seo";
-import { ROUTES } from "@/lib/site";
+import { BUSINESS, ROUTES } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Service Areas | Construction Across Southwestern Ontario | Apeiro",
@@ -73,7 +73,7 @@ export default function ServiceAreasPage() {
           >
             <iframe
               title="Map: Apeiro Construction service area across Southwestern Ontario, centred on our London office"
-              src={`https://www.google.com/maps?q=${encodeURIComponent("3392 Wonderland Road South, London, ON N6L 1J9")}&z=7&output=embed`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(BUSINESS.mapsQuery)}&z=7&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               style={{ border: 0, width: "100%", minHeight: 420, flex: "1 1 auto", display: "block" }}
