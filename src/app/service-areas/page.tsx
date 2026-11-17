@@ -59,22 +59,25 @@ export default function ServiceAreasPage() {
 
       <section id="map" className="bg-white">
         <div className="container" style={{ paddingTop: 72 }}>
-          {/* Placeholder until the embedded Google Map is supplied (see prototype note). */}
+          {/* Google Map centred on the London office, zoomed out to show Southwestern Ontario. No API key needed. */}
           <div
             style={{
               width: "100%",
               aspectRatio: "21 / 8",
-              minHeight: 220,
+              minHeight: 420,
               borderRadius: 8,
+              overflow: "hidden",
               background: "repeating-linear-gradient(135deg, #E9E7E1 0px, #E9E7E1 8px, #F2F0EB 8px, #F2F0EB 16px)",
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: 16,
-              textAlign: "center",
             }}
           >
-            <span style={{ fontSize: 14, color: "var(--muted)" }}>Map: Apeiro service area across Ontario (embedded Google Map on the live site)</span>
+            <iframe
+              title="Map: Apeiro Construction service area across Southwestern Ontario, centred on our London office"
+              src={`https://www.google.com/maps?q=${encodeURIComponent("3392 Wonderland Road South, London, ON N6L 1J9")}&z=7&output=embed`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              style={{ border: 0, width: "100%", minHeight: 420, flex: "1 1 auto", display: "block" }}
+            />
           </div>
         </div>
       </section>
