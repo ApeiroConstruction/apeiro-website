@@ -60,4 +60,35 @@ old_path,new_path,status,note
 /the-blue-mountains-ontario,/service-areas#georgian-bay,301,
 /windsor-ontario,/service-areas#windsor,301,
 /wasaga-beach-ontario,/service-areas#georgian-bay,301,
-/blog/<post>,TBD,301,"Blog post redirects pending the blog sort (see CLAUDE.md, Open items)"
+/top-challenges-in-ici-construction-in-ontario-before-fall-bids,/blog/top-challenges-in-ici-construction-in-ontario-before-fall-bids,301,blog: kept
+/7-quality-safety-compliance-checks-for-wsib-ready-ici-sites,/blog/7-quality-safety-compliance-checks-for-wsib-ready-ici-sites,301,blog: kept
+/top-7-commercial-construction-mistakes-and-how-to-avoid-them,/blog/top-7-commercial-construction-mistakes-and-how-to-avoid-them,301,blog: kept
+/quality-control-in-modern-commercial-construction-strategies-that-work,/blog/quality-control-in-modern-commercial-construction-strategies-that-work,301,blog: kept
+/how-pre-construction-planning-improves-outcomes-in-school-and-hospital-builds,/blog/how-pre-construction-planning-improves-outcomes-in-school-and-hospital-builds,301,blog: kept
+/preparing-warehouse-construction-for-the-holiday-supply-chain,/blog/preparing-warehouse-construction-for-the-holiday-supply-chain,301,blog: kept
+/spring-road-construction-in-ontario-what-drivers-and-cities-should-know,/blog/spring-road-construction-in-ontario-what-drivers-and-cities-should-know,301,blog: kept
+/what-is-leed-certification-benefits-for-commercial-projects-in-2026,/blog/what-is-leed-certification-benefits-for-commercial-projects-in-2026,301,blog: kept
+/step-by-step-the-ici-construction-process-explained-from-planning-to-handover,/blog/step-by-step-the-ici-construction-process-explained-from-planning-to-handover,301,blog: kept
+/essential-safety-protocols-protecting-workers-and-projects-in-ici-construction,/blog/essential-safety-protocols-protecting-workers-and-projects-in-ici-construction,301,blog: kept
+/permit-proof-planning-for-hospital-construction-projects-in-ontario,/blog/permit-proof-planning-for-hospital-construction-projects-in-ontario,301,blog: kept
+/building-stronger-communities-the-real-impact-of-expert-religious-center-construction,/blog/building-stronger-communities-the-real-impact-of-expert-religious-center-construction,301,blog: kept
+/building-safe-healthy-schools-whats-new-for-ontario-schools-this-year,/blog/how-pre-construction-planning-improves-outcomes-in-school-and-hospital-builds,301,blog: merged
+/march-break-planning-school-construction-timelines-for-ontario-schools,/blog/how-pre-construction-planning-improves-outcomes-in-school-and-hospital-builds,301,blog: merged
+/school-construction-timeline-planning-in-ontario-what-to-lock-in-before-you-book,/blog/how-pre-construction-planning-improves-outcomes-in-school-and-hospital-builds,301,blog: merged
+/innovative-design-build-solutions-for-modern-warehouses-in-ontario,/blog/preparing-warehouse-construction-for-the-holiday-supply-chain,301,blog: merged
+/how-energy-efficient-upgrades-cut-costs-for-ontario-businesses-in-2025,/blog/what-is-leed-certification-benefits-for-commercial-projects-in-2026,301,blog: merged
+/green-building-maintenance-for-sustainable-commercial-construction,/blog/what-is-leed-certification-benefits-for-commercial-projects-in-2026,301,blog: merged
+/roadway-and-asphalt-driveway-construction-before-ontario-freeze-up-hits,/blog/spring-road-construction-in-ontario-what-drivers-and-cities-should-know,301,blog: merged
+/restaurant-retail-construction-creating-inviting-spaces-for-fall-2025,/services/commercial-construction,301,blog: to Commercial
+/retail-and-office-refresh-post-holiday-construction-ideas-that-work,/services/commercial-construction,301,blog: to Commercial
+/valentines-retail-design-store-renovations-that-boost-sales-fast,/services/commercial-construction,301,blog: to Commercial
+/is-your-commercial-roof-ready-for-winter-fall-maintenance-checklist-for-2025,/services/commercial-construction,301,blog: to Commercial
+/bathroom-renovation-guide-budget-timeline-and-holiday-guests-prep-tips,/blog,301,blog: retired (homeowner)
+/custom-cabinetry-or-prefab-kitchen-storage-that-maximizes-space-in-2026,/blog,301,blog: retired (homeowner)
+/fall-2025-home-renovation-trends-transform-your-space-before-winter,/blog,301,blog: retired (homeowner)
+/family-day-home-upgrades-creating-multi-generational-spaces-in-ontario,/blog,301,blog: retired (homeowner)
+/holiday-ready-kitchens-how-long-does-a-kitchen-remodel-take-by-christmas,/blog,301,blog: retired (homeowner)
+/luxury-estate-villas-in-ontario-spring-design-trends-for-2026-builds,/blog,301,blog: retired (homeowner)
+/luxury-homes-wishlist-smart-tech-and-finishes-for-the-holidays-2025,/blog,301,blog: retired (homeowner)
+/new-year-renovation-roadmap-when-to-start-and-what-to-budget-in-2026,/blog,301,blog: retired (homeowner)
+/spring-kitchen-vs-bathroom-remodel-which-upgrade-ontario-homes-need-first,/blog,301,blog: retired (homeowner)

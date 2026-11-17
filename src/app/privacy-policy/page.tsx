@@ -60,7 +60,7 @@ export default function PrivacyPage() {
         <div className="container" style={{ maxWidth: 820, paddingTop: 64, paddingBottom: 88, color: "var(--body)", fontSize: 17, lineHeight: 1.65 }}>
           <h2 style={h2Style(true)}>About This Policy</h2>
           <p style={pStyle}>
-            Apeiro Construction Inc. (“Apeiro,” “we” or “us”) is a construction company based at 3392 Wonderland Road South, London, Ontario N6L 1J9.
+            Apeiro Construction Inc. (“Apeiro,” “we” or “us”) is a construction company based at 3392 Wonderland Road South, Building 3, Unit 3, London, Ontario N6L 1J9.
           </p>
           <p style={pStyle}>
             This policy explains what personal information we collect, how we use and protect it, and your rights under Canada’s Personal Information
@@ -145,9 +145,8 @@ export default function PrivacyPage() {
               United States.
             </li>
             <li>
-              <strong>Supabase</strong> (quote request database), which stores the quote requests submitted through our website on servers located in{" "}
-              {/* TODO(legal): confirm the Supabase project region before launch — CLAUDE.md open item 2 */}
-              <Pending>[confirm region, e.g. Canada (Central)]</Pending>.
+              <strong>Supabase</strong> (quote request database), which stores the quote requests submitted through our website on servers located in the
+              United States (U.S. East, Virginia).
             </li>
             <li>
               <strong>Resend</strong> (email notifications), a U.S. company that sends our team an email containing the details of each new quote
@@ -163,13 +162,11 @@ export default function PrivacyPage() {
           </p>
 
           <h2 style={h2Style()}>Cookies and Analytics</h2>
-          <p style={pStyle}>Cookies are small files a website stores in your browser. Our site uses:</p>
+          <p style={pStyle}>
+            Cookies are small files a website stores in your browser. Our website does not set any cookies of its own: the quote form keeps your answers on
+            the page until you submit them. The following third-party services on our site may set cookies:
+          </p>
           <ul style={ulStyle}>
-            <li>
-              <strong>Essential cookies</strong> that make the site work, such as remembering where you are in the quote form.{" "}
-              {/* TODO(legal): the site currently sets no essential cookies of its own (the quote form keeps its steps in the page, not in a cookie). */}
-              <Pending>[Review: the website itself currently sets no cookies for the quote form.]</Pending>
-            </li>
             <li>
               <strong>Analytics cookies</strong> from Google Analytics, which tell us how many people visit, which pages they view and how they found us.
               This information is aggregated and does not identify you by name. You can opt out with Google’s Analytics Opt-out Browser Add-on.
@@ -220,7 +217,7 @@ export default function PrivacyPage() {
             <br />
             Apeiro Construction Inc.
             <br />
-            3392 Wonderland Road South, London, Ontario N6L 1J9
+            3392 Wonderland Road South, Building 3, Unit 3, London, Ontario N6L 1J9
             <br />
             <a href={`mailto:${BUSINESS.email}`} style={linkStyle}>
               {BUSINESS.email}

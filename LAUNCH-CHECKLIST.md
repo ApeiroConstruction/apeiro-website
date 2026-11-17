@@ -80,7 +80,7 @@ A step-by-step list for getting the new website online. Do the steps in order. N
 ---
 
 ## Open items to resolve before launch
-1. **Blog:** the list of old post URLs (keep 12, merge 6, redirect 4, retire 9). The footer's Blog link returns once `/blog` is built.
-2. **Privacy Policy:** legal review of the 7 highlighted items (hosting region, retention periods, Privacy Commissioner phone, "Last updated" date, ads sentence). The hosting item now names Netlify and Supabase. If Supabase is set up in Canada (Central), that answers part of the hosting region; Netlify serves the site from a global network, which the policy should mention.
-3. **Maps:** Service Areas currently shows placeholder text where a map should go. Contact uses an embedded Google Map (it may set Google cookies). Decide on both.
+1. ~~**Blog:**~~ Done: 12 posts moved to /blog, 7 merged, 4 redirected to Commercial, 9 homeowner posts retired to /blog (all 32 old addresses redirect).
+2. **Privacy Policy:** legal review of the remaining highlighted items ("Last updated" date, ads sentence, retention periods, Privacy Commissioner phone). Providers are now named (Netlify, Supabase in U.S. East, Resend, Google Analytics and Maps) and the cookies section is corrected.
+3. ~~**Maps:**~~ Done: Google Maps on Service Areas and Contact, pinned to the Google Business listing.
 4. **Project media:** photos or video for Veteran's Drive, Stratford and for Site Works, 1015 Eagle Drive. Also the Terrace Lodge city, and the region and utility type for Hard Surface Restoration.

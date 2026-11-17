@@ -114,7 +114,7 @@ export default function AboutPage() {
               >
                 London Office
               </span>
-              <span style={{ color: "var(--body)" }}>3392 Wonderland Road South, London, Ontario N6L 1J9</span>
+              <span style={{ color: "var(--body)" }}>3392 Wonderland Road South, Building 3, Unit 3, London, Ontario N6L 1J9</span>
             </div>
           </div>
           <div className="split-media">

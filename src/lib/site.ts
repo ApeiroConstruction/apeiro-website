@@ -5,7 +5,7 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.apeiro
 export const BUSINESS = {
   name: "Apeiro Construction Inc.",
   shortName: "Apeiro Construction",
-  street: "3392 Wonderland Road South",
+  street: "3392 Wonderland Road South, Building 3, Unit 3",
   city: "London",
   region: "ON",
   regionLong: "Ontario",
@@ -17,7 +17,7 @@ export const BUSINESS = {
   email: "info@apeiroconstruction.com",
   hoursDisplay: "Mon–Sat, 9:00 am – 5:00 pm",
   /** Google Maps search that finds our Google Business listing (labelled pin). */
-  mapsQuery: "Apeiro Construction Inc, 3392 Wonderland Road South, London, ON N6L 1J9",
+  mapsQuery: "Apeiro Construction Inc, 3392 Wonderland Rd S, Bldg 3 Unit 3, London, ON N6L 1J9",
 };
 
 export const ROUTES = {

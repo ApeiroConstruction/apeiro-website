@@ -83,7 +83,7 @@ export default function ContactPage() {
                 }
               >
                 <span style={{ fontSize: 17 }}>
-                  3392 Wonderland Road South
+                  3392 Wonderland Road South, Building 3, Unit 3
                   <br />
                   London, Ontario N6L 1J9
                 </span>
@@ -142,7 +142,7 @@ export default function ContactPage() {
             }}
           >
             <iframe
-              title="Map: Apeiro Construction office, 3392 Wonderland Road South, London, Ontario"
+              title="Map: Apeiro Construction office, 3392 Wonderland Road South, Building 3, Unit 3, London, Ontario"
               src={`https://www.google.com/maps?q=${MAP_QUERY}&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

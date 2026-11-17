@@ -38,7 +38,7 @@ export default function Footer() {
             <h2 className="ftr-head" id="ftr-resources">Resources</h2>
             <ul>
               <li><Link href={ROUTES.faqs}>FAQs</Link></li>
-              {/* Blog link returns once /blog is built (see CLAUDE.md open item 1). */}
+              <li><Link href={ROUTES.blog}>Blog</Link></li>
               <li><Link href={ROUTES.privacy}>Privacy Policy</Link></li>
             </ul>
           </nav>
