@@ -20,3 +20,7 @@ create table if not exists public.quote_requests (
 alter table public.quote_requests enable row level security;
 
 revoke all on public.quote_requests from anon, authenticated;
+
+-- Newer Supabase projects don't grant table access to service_role automatically.
+-- The website's server (secret key = service_role) only needs to add rows.
+grant insert on public.quote_requests to service_role;
