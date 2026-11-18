@@ -100,7 +100,7 @@ export default function SignatureMaker() {
             <table cellPadding={0} cellSpacing={0} role="presentation" style={{ borderCollapse: "collapse", fontFamily: FONT, color: DARK }}>
               <tbody>
                 <tr>
-                  <td style={{ verticalAlign: "top", paddingRight: 16 }}>
+                  <td valign="middle" style={{ verticalAlign: "middle", paddingRight: 16 }}>
                     <a href={SITE_URL} style={{ textDecoration: "none" }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={MEDIA.logo} alt="Apeiro Construction" width={140} height={50} style={{ display: "block", border: 0, width: 140, height: "auto" }} />
