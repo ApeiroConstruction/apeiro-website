@@ -57,7 +57,7 @@ const PROJECTS: Project[] = [
   {
     id: "eagle-drive",
     tag: "Civil & Infrastructure · London",
-    name: "Site Works, 1015 Eagle Drive",
+    name: "Structural Site Works",
     subtitle: "Retaining Wall, Parking Lot & Foundation Repairs",
     text: "Exterior site improvements including construction of a retaining wall, a new asphalt parking lot, and porch support repairs with re-parging of the foundation.",
     scope: ["Retaining wall construction", "New asphalt parking lot", "Porch support repairs", "Foundation re-parging"],

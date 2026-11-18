@@ -62,7 +62,7 @@ const STEPS = [
 ];
 
 const PROJECT: ProjectSummary = {
-  name: "Site Works, 1015 Eagle Drive",
+  name: "Structural Site Works",
   tag: "Civil & Infrastructure · London",
   note: "Retaining wall, asphalt parking lot and foundation repairs",
 };

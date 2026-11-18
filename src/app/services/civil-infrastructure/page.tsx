@@ -88,7 +88,7 @@ const PROJECTS: ProjectSummary[] = [
     note: "Ongoing concrete restoration subcontract for Ledcor",
   },
   {
-    name: "Site Works, 1015 Eagle Drive",
+    name: "Structural Site Works",
     tag: "Civil & Infrastructure · London",
     note: "Retaining wall, asphalt parking lot and foundation repairs",
   },
