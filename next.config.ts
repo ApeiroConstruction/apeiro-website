@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -26,8 +27,15 @@ const isProduction = siteEnv
   ? siteEnv === "production"
   : process.env.CONTEXT === "production" || process.env.VERCEL_ENV === "production";
 
+// Pre-launch review password (see src/middleware.ts). Only active in "prelaunch" mode and
+// only if PREVIEW_PASSWORD is set in Netlify. Only a SHA-256 hash is built into the site,
+// never the password itself. Launching (SITE_ENV = "production") switches it off.
+const previewPassword = siteEnv === "prelaunch" ? (process.env.PREVIEW_PASSWORD || "").trim() : "";
+const previewPasswordHash = previewPassword ? createHash("sha256").update(previewPassword).digest("hex") : "";
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  env: { PREVIEW_PASSWORD_SHA256: previewPasswordHash },
   // Inline the (small) stylesheet into each page so it doesn't block the first paint.
   experimental: { inlineCss: true },
   images: {
