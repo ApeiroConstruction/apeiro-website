@@ -51,8 +51,8 @@ export default function PrivacyPage() {
     <>
       <PageHero pad="compact" crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Privacy Policy" }]} title="Privacy Policy">
         <p style={{ margin: 0, fontSize: 17, color: "var(--on-dark-strong)" }}>
-          {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
-          Last updated: <Pending>[date of publication]</Pending>
+          {/* Set to the launch date on launch day (LAUNCH-CHECKLIST.md). */}
+          Last updated: <Pending>[set on launch day]</Pending>
         </p>
       </PageHero>
 
@@ -113,12 +113,8 @@ export default function PrivacyPage() {
             By submitting our quote form or contacting us, you consent to us using your information to respond to you as described in this policy.
           </p>
           <p style={pStyle}>
-            We send marketing emails only with your consent, as required by Canada’s Anti-Spam Legislation (CASL), and every message includes a way to
-            unsubscribe.
-          </p>
-          <p style={pStyle}>
-            Text messages: we send text messages only to people who have agreed to receive them. Reply STOP at any time to opt out, or HELP for help. We
-            never share mobile numbers or text-message consent with third parties for their own marketing.
+            If we send you marketing emails, we will do so only with your consent, as required by Canada’s Anti-Spam Legislation (CASL), and you can
+            unsubscribe at any time.
           </p>
           <p style={pStyle}>You can withdraw your consent at any time by contacting our Privacy Officer, subject to legal or contractual restrictions.</p>
 
@@ -157,8 +153,8 @@ export default function PrivacyPage() {
             </li>
           </ul>
           <p style={pStyle}>
-            Information stored outside Canada is protected by our agreements with these providers, but may be subject to the laws of that country,
-            including lawful access by its courts and authorities.
+            These providers are required to protect personal information under their terms of service. Information stored outside Canada may be
+            subject to the laws of the country where it is stored, including lawful access by its courts and authorities.
           </p>
 
           <h2 style={h2Style()}>Cookies and Analytics</h2>
@@ -177,32 +173,34 @@ export default function PrivacyPage() {
             </li>
           </ul>
           <p style={pStyle}>
-            We do not use advertising or retargeting cookies. {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
-            <Pending>[Update this sentence if Apeiro starts running online ads.]</Pending>
+            {/* If Apeiro starts running online ads or ad tracking (e.g. Google Ads, Meta Pixel), update this sentence first. */}
+            We do not use advertising or retargeting cookies.
           </p>
 
           <h2 style={h2Style()}>How Long We Keep Information</h2>
           <p style={pStyle}>
-            We keep quote requests that don’t become projects for {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
-            <Pending>[2 years]</Pending>, and client and project records for {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
-            <Pending>[7 years]</Pending> after completion to meet tax and legal requirements. We then securely delete them.
+            We keep personal information only as long as we need it for the purposes described in this policy, or as long as the law requires (for
+            example, for tax, contract and safety records). When it is no longer needed, we delete it or make it anonymous.
           </p>
 
           <h2 style={h2Style()}>How We Protect Information</h2>
           <p style={pStyle}>
-            We protect personal information with encrypted connections, access limited to staff who need it, and secure service providers. If a breach
-            creates a real risk of significant harm, we will notify you and the Office of the Privacy Commissioner of Canada as required by law.
+            We use reasonable safeguards to protect personal information, such as encrypted connections, restricted access and reputable service
+            providers. If a breach creates a real risk of significant harm, we will notify you and the Office of the Privacy Commissioner of Canada as
+            required by law.
           </p>
 
           <h2 style={h2Style()}>Your Rights and Choices</h2>
           <p style={pStyle}>
             You can ask to see the personal information we hold about you, correct it, or withdraw your consent. Contact our Privacy Officer and we will
-            respond within 30 days.
+            respond within 30 days, as required by law.
           </p>
           <p style={pStyle}>
-            If you are not satisfied with our response, you can contact the Office of the Privacy Commissioner of Canada at www.priv.gc.ca or
-            1-800-282-1376 {/* TODO(legal): confirm before launch — CLAUDE.md open item 2 */}
-            <Pending>[verify before publishing]</Pending>.
+            If you are not satisfied with our response, you can contact the Office of the Privacy Commissioner of Canada at{" "}
+            <a href="https://www.priv.gc.ca" style={linkStyle}>
+              www.priv.gc.ca
+            </a>{" "}
+            or 1-800-282-1376.
           </p>
 
           <h2 style={h2Style()}>Changes to This Policy</h2>
