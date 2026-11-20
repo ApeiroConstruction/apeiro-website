@@ -83,4 +83,4 @@ A step-by-step list for getting the new website online. Do the steps in order. N
 1. ~~**Blog:**~~ Done: 12 posts moved to /blog, 7 merged, 4 redirected to Commercial, 9 homeowner posts retired to /blog (all 32 old addresses redirect).
 2. **Privacy Policy:** legal review of the remaining highlighted items ("Last updated" date, ads sentence, retention periods, Privacy Commissioner phone). Providers are now named (Netlify, Supabase in U.S. East, Resend, Google Analytics and Maps) and the cookies section is corrected.
 3. ~~**Maps:**~~ Done: Google Maps on Service Areas and Contact, pinned to the Google Business listing.
-4. **Project media:** photos or video for Veteran's Drive, Stratford and for Structural Site Works. Also the Terrace Lodge city, and the region and utility type for Hard Surface Restoration.
+4. **Project media:** ~~Veteran's Drive photo~~ (added Nov 20); still needed: photos or video for Structural Site Works. Also the Terrace Lodge city, and the region and utility type for Hard Surface Restoration.

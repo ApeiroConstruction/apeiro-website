@@ -47,6 +47,8 @@ const STEPS = [
 const PROJECTS: ProjectSummary[] = [
   {
     name: "Veteran’s Drive, Stratford",
+    img: MEDIA.veteransPhoto,
+    alt: "Apeiro crew restoring the Stratford Bandshell on Veteran’s Drive behind safety fencing",
     tag: "Institutional · Stratford",
     note: "Bandshell rehabilitation and public space enhancement",
   },

@@ -100,6 +100,7 @@ export const MEDIA = {
   hsrPoster: "/video/project-hard-surface-restoration-poster.jpg",
   terraceVideo: "/video/project-terrace-lodge.mp4",
   terracePoster: "/video/project-terrace-lodge-poster.jpg",
+  veteransPhoto: "/images/project-veterans-drive.jpg",
 };
 
 export const BADGES = [
@@ -129,6 +130,6 @@ export type ProjectSummary = {
 export const FEATURED_PROJECTS: ProjectSummary[] = [
   { name: "Hard Surface Restoration Program", img: MEDIA.hsrPoster, alt: "Aerial view of crew restoring concrete sidewalk panels", tag: "Civil & Infrastructure · Southwestern Ontario", note: "Ongoing concrete restoration subcontract for Ledcor" },
   { name: "89 Ridout", img: MEDIA.ridoutPoster, alt: "89 Ridout building exterior", tag: "Commercial · London", note: "Structural restoration and exterior envelope upgrades" },
-  { name: "Veteran’s Drive, Stratford", tag: "Institutional · Stratford", note: "Bandshell rehabilitation and public space enhancement" },
+  { name: "Veteran’s Drive, Stratford", img: MEDIA.veteransPhoto, alt: "Apeiro crew restoring the Stratford Bandshell on Veteran’s Drive behind safety fencing", tag: "Institutional · Stratford", note: "Bandshell rehabilitation and public space enhancement" },
   { name: "Terrace Lodge", img: MEDIA.terracePoster, alt: "Terrace Lodge during exterior renewal", tag: "Institutional", note: "Siding and soffit replacement" },
 ];

@@ -1,4 +1,4 @@
-import { CtaBand, PageHero, PhotosUnderConstruction, ProjectVideo } from "@/components/Blocks";
+import { CtaBand, MediaImage, PageHero, PhotosUnderConstruction, ProjectVideo } from "@/components/Blocks";
 import { Check } from "@/components/Icons";
 import { pageMeta } from "@/lib/seo";
 import { MEDIA, ROUTES } from "@/lib/site";
@@ -18,6 +18,7 @@ type Project = {
   text: string;
   scope: string[];
   video?: { src: string; poster: string; label: string };
+  photo?: { src: string; alt: string };
 };
 
 const PROJECTS: Project[] = [
@@ -37,6 +38,7 @@ const PROJECTS: Project[] = [
     subtitle: "Community Infrastructure Rehabilitation & Public Space Enhancement",
     text: "Rehabilitation of the Stratford Bandshell, a public outdoor performance venue along the Avon River in Upper Queen’s Park. Structural upgrades and surface restoration support ongoing community events, concerts and festivals. We managed multiple work zones at once, including carpentry, finishing and site coordination, delivering a revitalized community space built for long-term public use.",
     scope: ["Structural upgrades", "Surface restoration", "Carpentry and finishing", "Multi-zone site coordination"],
+    photo: { src: MEDIA.veteransPhoto, alt: "Apeiro crew restoring the Stratford Bandshell on Veteran’s Drive behind safety fencing" },
   },
   {
     id: "terrace-lodge",
@@ -80,6 +82,8 @@ function ProjectSection({ p, index }: { p: Project; index: number }) {
       <div className="container section" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "40px 64px" }}>
         {p.video ? (
           <ProjectVideo src={p.video.src} poster={p.video.poster} label={p.video.label} priority={index === 0} style={media} />
+        ) : p.photo ? (
+          <MediaImage src={p.photo.src} alt={p.photo.alt} ratio="16/9" sizes="(max-width: 1000px) 100vw, 600px" style={{ ...media, order: 2 }} />
         ) : (
           <PhotosUnderConstruction large ratio="16/9" style={{ ...media, order: 2 }} />
         )}
