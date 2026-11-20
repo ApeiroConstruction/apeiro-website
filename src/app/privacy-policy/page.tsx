@@ -60,7 +60,7 @@ export default function PrivacyPage() {
         <div className="container" style={{ maxWidth: 820, paddingTop: 64, paddingBottom: 88, color: "var(--body)", fontSize: 17, lineHeight: 1.65 }}>
           <h2 style={h2Style(true)}>About This Policy</h2>
           <p style={pStyle}>
-            Apeiro Construction Inc. (“Apeiro,” “we” or “us”) is a construction company based at 3392 Wonderland Road South, Building 3, Unit 3, London, Ontario N6L 1J9.
+            Apeiro Construction Inc. (“Apeiro,” “we” or “us”) is a construction company based at 3392 Wonderland Road South, Building 3, Unit 303, London, Ontario N6L 1J9.
           </p>
           <p style={pStyle}>
             This policy explains what personal information we collect, how we use and protect it, and your rights under Canada’s Personal Information
@@ -215,7 +215,7 @@ export default function PrivacyPage() {
             <br />
             Apeiro Construction Inc.
             <br />
-            3392 Wonderland Road South, Building 3, Unit 3, London, Ontario N6L 1J9
+            3392 Wonderland Road South, Building 3, Unit 303, London, Ontario N6L 1J9
             <br />
             <a href={`mailto:${BUSINESS.email}`} style={linkStyle}>
               {BUSINESS.email}
