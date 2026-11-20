@@ -17,10 +17,11 @@ export async function GET() {
     const res = await fetch(`${url.replace(/\/$/, "")}/rest/v1/quote_requests?select=id&limit=1`, {
       headers: { apikey: key, ...(key.startsWith("eyJ") ? { Authorization: `Bearer ${key}` } : {}) },
       cache: "no-store",
+      signal: AbortSignal.timeout(8000),
     });
     // 200 = readable, 401/403 = reached the database and was refused (expected). Both mean "awake".
     const reached = res.status === 200 || res.status === 401 || res.status === 403;
-    await res.body?.cancel();
+    await res.text(); // tiny reply; read it fully so the connection closes cleanly (never returned)
     return NextResponse.json(
       { ok: reached, database: reached ? "awake" : `unexpected status ${res.status}` },
       { status: reached ? 200 : 502, headers: { "Cache-Control": "no-store" } },
