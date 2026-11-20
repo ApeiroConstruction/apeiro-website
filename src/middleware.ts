@@ -40,5 +40,6 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   // Skip build files and fonts (they hold nothing private and are only requested by unlocked pages).
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  // /api/health stays reachable so the daily keep-awake check works during the password period.
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|api/health).*)"],
 };

@@ -1,0 +1,27 @@
+# Keeps the Supabase quote database awake (the free plan pauses after 7 days of no activity).
+# Runs once a day on GitHub's free scheduled tasks and can also be started by hand
+# (GitHub > Actions > Keep Supabase awake > Run workflow). If it fails, GitHub emails the repo owner.
+name: Keep Supabase awake
+
+on:
+  schedule:
+    - cron: "17 11 * * *" # every day at 11:17 UTC (about 6–7 am in London, Ontario)
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Call the website health check
+        run: |
+          for attempt in 1 2 3; do
+            body=$(curl -sS --max-time 30 -w " HTTP %{http_code}" https://apeiro-website.netlify.app/api/health) || true
+            echo "Attempt $attempt: $body"
+            case "$body" in *'"database":"awake"'*) exit 0 ;; esac
+            sleep 20
+          done
+          echo "Health check did not confirm the database is awake."
+          exit 1
