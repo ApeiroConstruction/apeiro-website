@@ -45,9 +45,22 @@ const nextConfig: NextConfig = {
     return loadRedirects();
   },
   async headers() {
+    // Security headers on every page (HTTPS/HSTS and nosniff are already added by Netlify).
+    const security = [
+      // Stop other sites from showing ours inside a frame (clickjacking).
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      {
+        key: "Content-Security-Policy",
+        value: "frame-ancestors 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; upgrade-insecure-requests",
+      },
+      // Only share our domain (not full page addresses) when visitors follow a link elsewhere.
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      // The site never needs camera, microphone, location or payment access.
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+    ];
     // Preview and development deployments must never be indexed.
-    if (isProduction) return [];
-    return [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }];
+    const noindex = isProduction ? [] : [{ key: "X-Robots-Tag", value: "noindex, nofollow" }];
+    return [{ source: "/:path*", headers: [...security, ...noindex] }];
   },
 };
 
