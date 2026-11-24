@@ -54,6 +54,7 @@ export async function POST(req: Request) {
     company: str(body.company, 160),
     email: str(body.email, 254),
     phone: str(body.phone, 40),
+    message: str(body.message, 2000),
     page_url: str(body.page_url, 500),
   };
   const problems = validateQuote(input);
@@ -111,10 +112,11 @@ export async function POST(req: Request) {
       ["Company", input.company],
       ["Email", input.email],
       ["Phone", input.phone],
+      ["Project details", input.message || "(none)"],
       ["Submitted from", input.page_url ?? ""],
     ];
     const html = `<h2>New quote request</h2><table cellpadding="6">${rows
-      .map(([k, v]) => `<tr><th align="left">${k}</th><td>${escapeHtml(v)}</td></tr>`)
+      .map(([k, v]) => `<tr><th align="left" valign="top">${k}</th><td>${escapeHtml(v).replace(/\r?\n/g, "<br>")}</td></tr>`)
       .join("")}</table>`;
     const text = rows.map(([k, v]) => `${k}: ${v}`).join("\n");
     try {

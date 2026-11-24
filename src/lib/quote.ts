@@ -12,6 +12,7 @@ export type QuoteInput = {
   company: string;
   email: string;
   phone: string;
+  message?: string;
   page_url?: string;
 };
 

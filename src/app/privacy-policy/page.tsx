@@ -29,7 +29,7 @@ const linkStyle: CSSProperties = { color: "var(--red-text)", textDecoration: "un
 const COLLECT: [string, string, string][] = [
   [
     "You submit the Request a Quote form",
-    "Full name, company, email, phone number, project type, budget range and target timeline",
+    "Full name, company, email, phone number, project type, budget range, target timeline and any project details you choose to share",
     "To review your project and follow up with you",
   ],
   ["You call, text or email us", "Your name, contact details and anything you choose to share about your project", "To answer your questions and discuss your project"],

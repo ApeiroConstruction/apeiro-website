@@ -1238,6 +1238,18 @@ main:focus {
   background: #fff;
   color: var(--charcoal);
 }
+.field textarea {
+  font: inherit;
+  font-size: 16px;
+  padding: 12px 14px;
+  min-height: 112px;
+  border: 1px solid #8a8d91;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--charcoal);
+  resize: vertical;
+  width: 100%;
+}
 .field input[aria-invalid="true"] {
   border-color: var(--red-text);
   border-width: 2px;

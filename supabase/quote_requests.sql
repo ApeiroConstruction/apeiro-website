@@ -36,3 +36,6 @@ as $$ select now() $$;
 
 revoke all on function public.keepalive() from public, anon, authenticated;
 grant execute on function public.keepalive() to service_role;
+
+-- Optional "Project details" text from the quote form (added Nov 2026).
+alter table public.quote_requests add column if not exists message text;

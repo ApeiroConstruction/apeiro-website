@@ -1,5 +1,5 @@
 // Reusable page sections that repeat across the prototype pages.
-import Image, { getImageProps } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BUSINESS, ROUTES, type ProjectSummary } from "@/lib/site";
@@ -200,14 +200,16 @@ export function MediaImage({
  * Project video: muted, looping, playsInline, native controls, with a compressed poster image.
  * `priority` preloads the poster (use it for the first video on a page).
  */
+const TRANSPARENT_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 export function ProjectVideo({ src, poster, label, priority, style }: { src: string; poster: string; label: string; priority?: boolean; style?: React.CSSProperties }) {
-  // width 540 → the 2x candidate (used as src) is a 1080px-wide compressed image.
-  const { props } = getImageProps({ src: poster, alt: "", width: 540, height: 304, quality: 70 });
   return (
     <div className="media media-16-9" style={{ background: "var(--charcoal)", ...style }}>
-      {/* Same poster as a normal image underneath, so it paints immediately. */}
+      {/* The poster is a normal, compressed image underneath the video (sized for the screen), so it
+          paints fast and is only downloaded once. The video itself is transparent until played. */}
       <Image src={poster} alt="" aria-hidden="true" fill priority={priority} sizes="(max-width: 1000px) 100vw, 600px" quality={70} />
-      <video src={src} poster={props.src} muted loop playsInline controls preload="none" aria-label={label} />
+      {/* A 1×1 transparent poster stops the browser painting the player black, so the photo above shows through. */}
+      <video src={src} poster={TRANSPARENT_PIXEL} muted loop playsInline controls preload="none" aria-label={label} />
     </div>
   );
 }

@@ -26,6 +26,7 @@ export default function QuoteForm() {
   const [step, setStep] = useState(1);
   const [choices, setChoices] = useState<Record<ChoiceKey, string>>({ project_type: "", budget: "", timeline: "" });
   const [contact, setContact] = useState<Record<ContactKey, string>>({ name: "", company: "", email: "", phone: "" });
+  const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
   const [choiceError, setChoiceError] = useState("");
   const [errors, setErrors] = useState<ContactErrors>({});
@@ -34,9 +35,11 @@ export default function QuoteForm() {
   const thanksRef = useRef<HTMLHeadingElement>(null);
   const firstRender = useRef(true);
   const startedAt = useRef(Date.now());
+  const stepShownAt = useRef(0);
 
   // Move focus to the new question when the step changes (not on first load).
   useEffect(() => {
+    stepShownAt.current = Date.now();
     if (firstRender.current) {
       firstRender.current = false;
       return;
@@ -71,6 +74,9 @@ export default function QuoteForm() {
       next();
       return;
     }
+    // A double-click on "Next" (step 3) lands its second click on "Submit Request", which
+    // sits in the same spot. Ignore a submit that arrives right after step 4 appears.
+    if (Date.now() - stepShownAt.current < 700) return;
     const errs = validateContact(contact);
     setErrors(errs);
     const firstBad = CONTACT_FIELDS.find((f) => errs[f.id]);
@@ -86,6 +92,7 @@ export default function QuoteForm() {
         body: JSON.stringify({
           ...choices,
           ...contact,
+          message: message.trim(),
           website: hp,
           elapsed_ms: Date.now() - startedAt.current,
           page_url: window.location.href,
@@ -163,7 +170,7 @@ export default function QuoteForm() {
           <legend ref={legendRef} tabIndex={-1} className="q-legend">
             Your contact info
           </legend>
-          <p style={{ margin: "0 0 16px", fontSize: 14, color: "var(--muted)" }}>All fields are required.</p>
+          <p style={{ margin: "0 0 16px", fontSize: 14, color: "var(--muted)" }}>All fields are required unless marked optional.</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", gap: 16 }}>
             {CONTACT_FIELDS.map((f) => {
               const err = errors[f.id];
@@ -180,7 +187,12 @@ export default function QuoteForm() {
                     aria-invalid={err ? true : undefined}
                     aria-describedby={err ? `q-${f.id}-err` : undefined}
                     value={contact[f.id]}
-                    onChange={(e) => setContact((c) => ({ ...c, [f.id]: e.target.value }))}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setContact((c) => ({ ...c, [f.id]: value }));
+                      // Clear this field's red message as soon as the person starts fixing it.
+                      if (errors[f.id]) setErrors((prev) => ({ ...prev, [f.id]: undefined }));
+                    }}
                   />
                   {err && (
                     <span id={`q-${f.id}-err`} className="field-error">
@@ -190,6 +202,21 @@ export default function QuoteForm() {
                 </div>
               );
             })}
+          </div>
+          <div className="field" style={{ marginTop: 16 }}>
+            <label htmlFor="q-message">Project details (optional)</label>
+            <span id="q-message-hint" style={{ fontSize: 14, color: "var(--muted)" }}>
+              Location, scope, start date or anything else we should know.
+            </span>
+            <textarea
+              id="q-message"
+              name="message"
+              rows={4}
+              maxLength={2000}
+              aria-describedby="q-message-hint"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
           </div>
           <p style={{ margin: "16px 0 0", fontSize: 14, color: "var(--muted)" }}>
             By submitting, you agree to our{" "}
