@@ -14,10 +14,11 @@ const STEPS: { key: ChoiceKey; legend: string; options: readonly string[] }[] = 
 ];
 
 const CONTACT_FIELDS = [
-  { id: "name", label: "Full name", type: "text", autoComplete: "name" },
-  { id: "company", label: "Company", type: "text", autoComplete: "organization" },
-  { id: "email", label: "Email", type: "email", autoComplete: "email" },
-  { id: "phone", label: "Phone", type: "tel", autoComplete: "tel" },
+  // placeholder = light grey example shown in the empty box; it disappears as soon as someone types.
+  { id: "name", label: "Full name", type: "text", autoComplete: "name", placeholder: "e.g. Jane Smith" },
+  { id: "company", label: "Company", type: "text", autoComplete: "organization", placeholder: "e.g. Smith Developments Inc." },
+  { id: "email", label: "Email", type: "email", autoComplete: "email", placeholder: "name@company.com" },
+  { id: "phone", label: "Phone", type: "tel", autoComplete: "tel", placeholder: "e.g. (519) 555-0123" },
 ] as const;
 
 type ContactKey = (typeof CONTACT_FIELDS)[number]["id"];
@@ -182,6 +183,7 @@ export default function QuoteForm() {
                     name={f.id}
                     type={f.type}
                     autoComplete={f.autoComplete}
+                    placeholder={f.placeholder}
                     required
                     aria-required="true"
                     aria-invalid={err ? true : undefined}
@@ -214,6 +216,7 @@ export default function QuoteForm() {
               rows={4}
               maxLength={2000}
               aria-describedby="q-message-hint"
+              placeholder="e.g. New 2-storey addition in London, starting spring 2027"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />

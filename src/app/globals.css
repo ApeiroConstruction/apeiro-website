@@ -1250,6 +1250,12 @@ main:focus {
   resize: vertical;
   width: 100%;
 }
+/* Light grey example text inside empty boxes (contrast 5.3:1, still readable). */
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #6b6f73;
+  opacity: 1;
+}
 .field input[aria-invalid="true"] {
   border-color: var(--red-text);
   border-width: 2px;
