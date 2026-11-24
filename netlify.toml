@@ -10,12 +10,10 @@
   NEXT_TELEMETRY_DISABLED = "1"
 
 # Only the live production site may be indexed by Google.
-# PRE-LAUNCH: the main site is built as "prelaunch" (noindex), so the temporary
-# .netlify.app address stays out of Google. ON LAUNCH DAY, after the domain is
-# connected, change "prelaunch" to "production" below and redeploy.
+# LIVE since November 24, 2026. (Before launch this was "prelaunch": noindex + review password.)
 # Deploy previews and branch deploys are always "preview" (noindex).
 [context.production.environment]
-  NEXT_PUBLIC_SITE_ENV = "prelaunch"
+  NEXT_PUBLIC_SITE_ENV = "production"
 
 [context.deploy-preview.environment]
   NEXT_PUBLIC_SITE_ENV = "preview"

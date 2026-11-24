@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties } from "react";
 import { PageHero } from "@/components/Blocks";
 import { pageMeta } from "@/lib/seo";
 import { BUSINESS, ROUTES } from "@/lib/site";
@@ -9,11 +9,6 @@ export const metadata = pageMeta({
     "How Apeiro Construction collects, uses, stores and protects personal information, and your rights under Canada’s PIPEDA. Contact our Privacy Officer.",
   path: ROUTES.privacy,
 });
-
-/** Highlight for items still awaiting confirmation (CLAUDE.md open item 2). Dark text on pale yellow passes AA. */
-function Pending({ children }: { children: ReactNode }) {
-  return <mark style={{ background: "#FFF1B8", color: "#1C1E22", padding: "0 3px", borderRadius: 2 }}>{children}</mark>;
-}
 
 const h2Style = (first = false): CSSProperties => ({
   margin: first ? "0 0 12px" : "40px 0 12px",
@@ -51,8 +46,7 @@ export default function PrivacyPage() {
     <>
       <PageHero pad="compact" crumbs={[{ label: "Home", href: ROUTES.home }, { label: "Privacy Policy" }]} title="Privacy Policy">
         <p style={{ margin: 0, fontSize: 17, color: "var(--on-dark-strong)" }}>
-          {/* Set to the launch date on launch day (LAUNCH-CHECKLIST.md). */}
-          Last updated: <Pending>[set on launch day]</Pending>
+          Last updated: November 24, 2026
         </p>
       </PageHero>
 
