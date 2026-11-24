@@ -65,12 +65,17 @@ A step-by-step list for getting the new website online. Do the steps in order. N
 - [ ] Open items resolved (see below).
 - [ ] **Written approval** to launch.
 
-**Connect the domain** (only after approval and confirming who owns the domain):
-1. Netlify → **Domain management → Add a domain** → `www.apeiroconstruction.com`, set it as the **primary domain**, and add `apeiroconstruction.com` too (Netlify redirects it to www).
-2. Choose **"use external DNS"** (keep DNS at OneLocal). **Don't** move the whole domain's DNS to Netlify: that's riskier for email. Netlify then shows the records to add: usually a **CNAME** for `www` pointing to `apeiro-website.netlify.app`, and an **A record** (or ALIAS) for the bare domain. Change only those at OneLocal. **Leave MX, and any TXT records used for email, untouched.**
-3. Wait until Netlify shows the domain as verified and **HTTPS certificate issued**. Then open the site and send a test email to info@ to confirm email still works.
-4. **Check visitor access:** Netlify **Visitor access** should already be **public** (the pre-launch password screen replaced Netlify's private lock). The password switches itself off when the launch switch below is flipped. Afterwards you can delete the `PREVIEW_PASSWORD` variable in Netlify (optional).
-5. **Flip the launch switch:** in `netlify.toml`, change `NEXT_PUBLIC_SITE_ENV = "prelaunch"` to `"production"` (Claude can do this), then let Netlify redeploy. Check that `https://www.apeiroconstruction.com/robots.txt` shows `Allow: /`. **Until this is done, Google won't index the new site.**
+**Launch day (Wed Dec 2): DNS is now at Cloudflare (moved Nov 24), so we change it ourselves**
+1. **Claude:** flip `NEXT_PUBLIC_SITE_ENV` from `"prelaunch"` to `"production"` in `netlify.toml` and set the Privacy Policy "Last updated" date, then publish. This turns off the password and lets Google in.
+2. **Netlify:** **Domain management → Add a domain** → `www.apeiroconstruction.com` (set as **primary**), then add `apeiroconstruction.com` too. Choose **external DNS**. Don't buy a domain or upgrade.
+3. **Cloudflare → DNS → Records** (all must stay **grey cloud / DNS only**):
+   - Edit **CNAME `www`**: change `s.multiscreensite.com` → `apeiro-website.netlify.app`.
+   - **Delete the 2 A records** for `apeiroconstruction.com` (`35.172.94.1`, `100.24.208.97`, the old site), then **add CNAME `@`** → `apeiro-website.netlify.app` (Cloudflare "flattens" it automatically).
+   - ⚠️ Don't touch anything else (MX, TXT, SRV, autodiscover, lyncdiscover, msoid, sip, send, resend._domainkey, _dmarc).
+4. **Netlify:** wait for both domains to show verified and **HTTPS certificate provisioned** (usually minutes with Cloudflare).
+5. **Claude:** check every page on the real domain, the 88 redirects, robots.txt (`Allow: /`), the sitemap, and a test quote with an email alert to Andres.
+6. **You:** test email to and from info@. Optionally delete the `PREVIEW_PASSWORD` variable in Netlify.
+7. **Rollback if needed:** put CNAME `www` back to `s.multiscreensite.com` and restore the 2 A records (OneLocal's site runs until Dec 22).
 
 ## Part 7: After launch
 - [ ] Google Search Console: add the domain → **Sitemaps** → submit `https://www.apeiroconstruction.com/sitemap.xml`.
@@ -81,6 +86,6 @@ A step-by-step list for getting the new website online. Do the steps in order. N
 
 ## Open items to resolve before launch
 1. ~~**Blog:**~~ Done: 12 posts moved to /blog, 7 merged, 4 redirected to Commercial, 9 homeowner posts retired to /blog (all 32 old addresses redirect).
-2. **Privacy Policy:** legal review of the remaining highlighted items ("Last updated" date, ads sentence, retention periods, Privacy Commissioner phone). Providers are now named (Netlify, Supabase in U.S. East, Resend, Google Analytics and Maps) and the cookies section is corrected.
+2. ~~**Privacy Policy:**~~ Done: standard wording; only the "Last updated" date is set on launch day.
 3. ~~**Maps:**~~ Done: Google Maps on Service Areas and Contact, pinned to the Google Business listing.
 4. **Project media:** ~~Veteran's Drive photo~~ (added Nov 20); still needed: photos or video for Structural Site Works. Also the Terrace Lodge city, and the region and utility type for Hard Surface Restoration.
