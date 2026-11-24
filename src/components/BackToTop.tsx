@@ -13,12 +13,16 @@ export default function BackToTop() {
     return () => window.removeEventListener("scroll", on);
   }, []);
 
-  const goTop = () => {
+  const goTop = (e: React.MouseEvent<HTMLButtonElement>) => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
-    // Move keyboard focus back to the start of the page.
-    const skip = document.querySelector<HTMLElement>(".skip");
-    skip?.focus({ preventScroll: true });
+    // Keyboard users (Enter/Space give detail === 0): move focus back to the start of the page.
+    // Taps and mouse clicks: just blur the button, so nothing pops up over the logo.
+    if (e.detail === 0) {
+      document.querySelector<HTMLElement>(".skip")?.focus({ preventScroll: true });
+    } else {
+      e.currentTarget.blur();
+    }
   };
 
   return (

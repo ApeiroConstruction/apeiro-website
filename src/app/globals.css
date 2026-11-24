@@ -92,7 +92,8 @@ a:hover {
   border-radius: 4px;
   font-weight: 600;
 }
-.skip:focus {
+/* Only appears for keyboard users (Tab key). Taps, clicks and the back-to-top button never reveal it. */
+.skip:focus-visible {
   left: 16px;
   color: #fff;
 }
