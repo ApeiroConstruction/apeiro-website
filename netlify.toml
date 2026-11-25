@@ -14,6 +14,8 @@
 # Deploy previews and branch deploys are always "preview" (noindex).
 [context.production.environment]
   NEXT_PUBLIC_SITE_ENV = "production"
+  # Google Analytics 4 (public ID, not a secret). Live site only, so previews never count as visits.
+  NEXT_PUBLIC_GA_ID = "G-FWF1H7EHV1"
 
 [context.deploy-preview.environment]
   NEXT_PUBLIC_SITE_ENV = "preview"
