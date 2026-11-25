@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ContactClickTracking from "@/components/ContactClickTracking";
 import { businessJsonLd } from "@/lib/seo";
 import { IS_PRODUCTION } from "@/lib/env";
 import { SITE_URL } from "@/lib/site";
@@ -61,8 +62,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {GA_ID && (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <ContactClickTracking />
             <Script id="ga4" strategy="afterInteractive">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{allow_google_signals:false,allow_ad_personalization_signals:false});`}
             </Script>
           </>
         )}

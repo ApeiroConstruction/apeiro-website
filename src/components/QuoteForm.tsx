@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { BUDGETS, PROJECT_TYPES, TIMELINES, validateContact, type ContactErrors } from "@/lib/quote";
 import { BUSINESS, ROUTES } from "@/lib/site";
+import { trackEvent } from "@/lib/analytics";
 
 type ChoiceKey = "project_type" | "budget" | "timeline";
 
@@ -100,6 +101,8 @@ export default function QuoteForm() {
         }),
       });
       if (!res.ok) throw new Error(String(res.status));
+      // GA4 lead event: project type and budget only, never contact details.
+      trackEvent("generate_lead", { project_type: choices.project_type, budget: choices.budget, timeline: choices.timeline });
       setStatus("done");
     } catch {
       setStatus("failed");
