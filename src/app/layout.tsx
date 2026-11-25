@@ -4,6 +4,7 @@ import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactClickTracking from "@/components/ContactClickTracking";
+import GaLoader from "@/components/GaLoader";
 import { businessJsonLd } from "@/lib/seo";
 import { IS_PRODUCTION } from "@/lib/env";
 import { SITE_URL } from "@/lib/site";
@@ -62,8 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {GA_ID && (
           <>
             {/* The tiny setup below runs right away and queues events; the large Google library
-                loads only after the page has finished loading, so it never slows the first view. */}
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
+                loads on the visitor's first interaction or after 4 s (see GaLoader). */}
+            <GaLoader id={GA_ID} />
             <ContactClickTracking />
             <Script id="ga4" strategy="afterInteractive">
               {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{allow_google_signals:false,allow_ad_personalization_signals:false});`}
