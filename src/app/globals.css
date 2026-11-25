@@ -882,6 +882,30 @@ main:focus {
   text-transform: uppercase;
   color: #fff;
 }
+.ftr-col .ftr-social {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.site-footer .ftr-social a {
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  justify-content: center;
+  border: 1px solid #4a4e55;
+  border-radius: 50%;
+  color: #fff;
+  transition: background 0.2s, border-color 0.2s;
+}
+.site-footer .ftr-social a:hover {
+  background: var(--red);
+  border-color: var(--red);
+  text-decoration: none;
+}
 .ftr-copy {
   border-top: 1px solid #2e3238;
   padding-top: 24px;

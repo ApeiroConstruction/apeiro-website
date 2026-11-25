@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BUSINESS, MEDIA, SITE_URL } from "./site";
+import { BUSINESS, MEDIA, SITE_URL, SOCIAL } from "./site";
 
 /**
  * Builds page metadata: title (from the prototype <title>), ~150-character description,
@@ -63,5 +63,6 @@ export function businessJsonLd() {
       },
     ],
     areaServed: AREAS_SERVED.map((name) => ({ "@type": "AdministrativeArea", name: `${name}, Ontario` })),
+    sameAs: SOCIAL.map((s) => s.href),
   };
 }

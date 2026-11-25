@@ -62,6 +62,13 @@ export const SITEMAP_PATHS: string[] = [
   ROUTES.privacy,
 ];
 
+/** Official social media profiles (footer icons + Google business data "sameAs"). */
+export const SOCIAL = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/apeiro-construction/" },
+  { name: "Facebook", href: "https://www.facebook.com/p/Apeiro-Construction-61553581551135/" },
+  { name: "Instagram", href: "https://www.instagram.com/apeiro_construction/" },
+];
+
 export type NavLink = { label: string; href: string; sub?: boolean };
 
 export const NAV_BY_SECTOR: NavLink[] = [
