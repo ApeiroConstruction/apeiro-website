@@ -116,7 +116,9 @@ export default function QuoteForm() {
         <h2 ref={thanksRef} tabIndex={-1} className="h2" style={{ fontSize: 40 }}>
           Thank You
         </h2>
-        <p className="p">We’ve received your request for a {summary} project. Our team will follow up shortly.</p>
+        <p className="p">
+          We’ve received your request for {/^[aeiou]/i.test(summary) ? "an" : "a"} {summary} project. Our team will follow up shortly.
+        </p>
       </div>
     );
   }
