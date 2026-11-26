@@ -64,7 +64,6 @@ export default function HomePage() {
       <section id="top" className="hero dark">
         <HeroVideo src={MEDIA.heroVideo} poster={MEDIA.heroPoster} />
         <div className="container hero-inner">
-          <p className="eyebrow">$800K–$4M+ projects in London, Ontario</p>
           <h1>Commercial, Institutional &amp; Civil Construction in London, Ontario</h1>
           <p className="lead">
             Complex projects for institutional, municipal and commercial clients, delivered with in-house civil crews, tight cost control and minimal site
