@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 import { ROUTES } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "FAQs | Apeiro Construction",
+  title: "Construction FAQs | Commercial & Civil Contractor, London ON",
   description:
     "Answers to common questions about working with Apeiro Construction: services, project size, timelines, service areas, self-performed work and safety.",
   path: ROUTES.faqs,

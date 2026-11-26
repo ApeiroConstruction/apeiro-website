@@ -207,7 +207,8 @@ export function ProjectVideo({ src, poster, label, priority, style }: { src: str
     <div className="media media-16-9" style={{ background: "var(--charcoal)", ...style }}>
       {/* The poster is a normal, compressed image underneath the video (sized for the screen), so it
           paints fast and is only downloaded once. The video itself is transparent until played. */}
-      <Image src={poster} alt="" aria-hidden="true" fill priority={priority} sizes="(max-width: 1000px) 100vw, 600px" quality={70} />
+      {/* alt text helps Google Images; aria-hidden keeps screen readers from announcing it twice (the video has its own label). */}
+      <Image src={poster} alt={`${label.replace(/^Video of (the )?/i, "")} by Apeiro Construction`} aria-hidden="true" fill priority={priority} sizes="(max-width: 1000px) 100vw, 600px" quality={70} />
       {/* A 1×1 transparent poster stops the browser painting the player black, so the photo above shows through. */}
       <video src={src} poster={TRANSPARENT_PIXEL} muted loop playsInline controls preload="none" aria-label={label} />
     </div>

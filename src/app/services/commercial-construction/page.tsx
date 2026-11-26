@@ -6,7 +6,7 @@ import { MEDIA, ROUTES, type ProjectSummary } from "@/lib/site";
 export const metadata = pageMeta({
   title: "Commercial Construction in London, ON | Apeiro Construction",
   description:
-    "Office, retail, warehouse, medical and restaurant builds, plus renovations and tenant improvements, for businesses across London, Barrie, Cambridge and surrounding regions.",
+    "Office, retail, warehouse, medical and restaurant builds, renovations and tenant improvements across London, Cambridge, Barrie and beyond.",
   path: ROUTES.commercial,
 });
 

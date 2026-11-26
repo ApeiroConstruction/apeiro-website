@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 import { MEDIA, ROUTES } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Projects | Commercial, Institutional & Civil Construction | Apeiro",
+  title: "Our Projects | Commercial, Institutional & Civil | Apeiro",
   description:
     "From ground conditions to completed infrastructure: recent commercial, institutional and civil projects by Apeiro Construction across Southwestern Ontario.",
   path: ROUTES.projects,

@@ -15,10 +15,34 @@ export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
 }
 
+/**
+ * Shorter titles for Google results (which cut off around 60–65 characters).
+ * Only the browser-tab/search title changes; the article headline keeps the full title.
+ */
+const SEARCH_TITLES: Record<string, string> = {
+  "building-stronger-communities-the-real-impact-of-expert-religious-center-construction":
+    "Religious Centre Construction That Builds Communities",
+  "preparing-warehouse-construction-for-the-holiday-supply-chain": "Warehouse Construction & the Holiday Supply Chain",
+  "top-challenges-in-ici-construction-in-ontario-before-fall-bids": "ICI Construction Challenges in Ontario Before Fall Bids",
+  "7-quality-safety-compliance-checks-for-wsib-ready-ici-sites": "7 Quality & Safety Checks for WSIB-Ready ICI Sites",
+  "permit-proof-planning-for-hospital-construction-projects-in-ontario": "Permit-Proof Planning for Ontario Hospital Projects",
+  "how-pre-construction-planning-improves-outcomes-in-school-and-hospital-builds":
+    "Pre-Construction Planning for School & Hospital Builds",
+  "quality-control-in-modern-commercial-construction-strategies-that-work":
+    "Quality Control in Commercial Construction That Works",
+  "essential-safety-protocols-protecting-workers-and-projects-in-ici-construction":
+    "Essential Safety Protocols for ICI Construction Sites",
+  "top-7-commercial-construction-mistakes-and-how-to-avoid-them": "7 Commercial Construction Mistakes and How to Avoid Them",
+  "step-by-step-the-ici-construction-process-explained-from-planning-to-handover":
+    "The ICI Construction Process: Planning to Handover",
+  "what-is-leed-certification-benefits-for-commercial-projects-in-2026": "What Is LEED? Benefits for Commercial Projects in 2026",
+  "spring-road-construction-in-ontario-what-drivers-and-cities-should-know": "Spring Road Construction in Ontario: What to Know",
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost((await params).slug);
   if (!post) return {};
-  const title = `${post.title} | Apeiro`;
+  const title = `${SEARCH_TITLES[post.slug] ?? post.title} | Apeiro`;
   return pageMeta({ title, description: post.description, path: `${ROUTES.blog}/${post.slug}` });
 }
 
