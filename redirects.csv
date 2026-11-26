@@ -92,3 +92,15 @@ old_path,new_path,status,note
 /luxury-homes-wishlist-smart-tech-and-finishes-for-the-holidays-2025,/blog,301,blog: retired (homeowner)
 /new-year-renovation-roadmap-when-to-start-and-what-to-budget-in-2026,/blog,301,blog: retired (homeowner)
 /spring-kitchen-vs-bathroom-remodel-which-upgrade-ontario-homes-need-first,/blog,301,blog: retired (homeowner)
+/nortfold-county-ontario,/service-areas#niagara,301,"Search Console 404: misspelling of norfolk-county-ontario"
+/kitchener%E2%80%93waterloo-ontario,/service-areas#waterloo,301,"Search Console 404: en dash version"
+/kitchener–waterloo-ontario,/service-areas#waterloo,301,"Search Console 404: en dash version (decoded)"
+/custom-home-construction,/services,301,"Search Console 404: old residential service"
+/luxury-homes-and-estate-villas,/services,301,"Search Console 404: old residential service"
+/roofing-siding-and-window-replacement,/services,301,"Search Console 404: old residential service"
+/smart-and-energy-efficient-homes,/services,301,"Search Console 404: old residential service"
+/our-team,/about,301,"Search Console 404"
+/home,/,301,"Search Console 404"
+/portfolio,/projects,301,"Search Console 404"
+/services/%22,/services,301,"Search Console error: stray quote mark"
+/feed/atom,/blog,301,"Search Console: old blog feed"

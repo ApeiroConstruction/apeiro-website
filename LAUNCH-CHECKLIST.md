@@ -59,7 +59,7 @@ A step-by-step list for getting the new website online. Do the steps in order. N
 
 ## Part 6: Test the preview, then go live
 **On the Netlify test address:**
-- [ ] Click through every page on a phone and a computer.
+- [x] Click through every page on a phone and a computer.
 - [ ] Submit a test quote. Check it appears in Supabase and that the email arrives at info@.
 - [ ] Try a few old links (e.g. `/barrie-ontario`). They should land on the right section.
 - [ ] Open items resolved (see below).
@@ -78,8 +78,8 @@ A step-by-step list for getting the new website online. Do the steps in order. N
 7. **Rollback if needed:** put CNAME `www` back to `s.multiscreensite.com` and restore the 2 A records (OneLocal's site runs until Dec 22).
 
 ## Part 7: After launch
-- [ ] Google Search Console: add the domain → **Sitemaps** → submit `https://www.apeiroconstruction.com/sitemap.xml`.
-- [ ] Google Business Profile: set the website link to the new site.
+- [x] Google Search Console: add the domain → **Sitemaps** → submit `https://www.apeiroconstruction.com/sitemap.xml`.
+- [x] Google Business Profile: set the website link to the new site.
 - [ ] For 4–6 weeks, check Search Console → **Pages → Not found (404)** each week and send Claude any old addresses that need a redirect.
 
 ---
